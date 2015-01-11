@@ -1,0 +1,27 @@
+{
+  "name": "nodebb-plugin-header-extend",
+  "version": "0.0.1",
+  "description": "This plugin adds the ability to create custom header icons and menus",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pitaj/nodebb-plugin-header-extend.git"
+  },
+  "keywords": [
+    "header",
+    "nodebb",
+    "plugin",
+    "extend"
+  ],
+  "author": "PitaJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pitaj/nodebb-plugin-header-extend/issues"
+  },
+  "homepage": "https://github.com/pitaj/nodebb-plugin-header-extend",
+  "dependencies": {},
+  "devDependencies": {}
+}

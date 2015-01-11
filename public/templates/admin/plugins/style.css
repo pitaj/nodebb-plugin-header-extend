@@ -1,0 +1,47 @@
+.header-extend-config .fa {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.add, #save {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.header-extend-config h3 {
+  display:inline-block;
+}
+
+.header-extend-config .panel-body {
+  display:none;
+}
+
+.header-extend-config > .panel > .panel-body {
+  display: block;
+}
+.header-extend-config .fa-arrows {
+  margin-right: 10px;
+  border-right: 1px solid rgba(165,165,165,.75);
+  padding-right: 10px;
+}
+.header-extend-config .btn-primary, .header-extend-config .btn-danger, .header-extend-config .iconOnly {
+  margin-left: 10px;
+  float:right;
+}
+.header-extend-config {
+  margin-top:10px;
+}
+.header-extend-config .item-icon {
+  margin-right: 10px;
+}
+
+.header-extend-config code.item-route {
+  padding: 2px 4px;  font-size: 90%;  color: #eee;  background-color: #333;  white-space: nowrap;
+  border-radius: 3px;
+  margin-left: 10px;
+  font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+  text-transform: none;
+  font-size: 12px;
+}
+.header-extend-config .panel-heading {
+  line-height: 39px;
+}

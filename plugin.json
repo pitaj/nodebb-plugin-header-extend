@@ -1,0 +1,29 @@
+{
+    "id": "nodebb-plugin-header-extend",
+    "name": "NodeBB header extension plugin",
+    "description": "This plugin adds the ability to create custom header icons and menus",
+    "url": "https://github.com/pitaj/nodebb-plugin-header-extend",
+    "library": "library.js",
+    "staticDirs": {
+        "public": "public"
+    },
+    "hooks": [
+      {
+        "hook": "static:app.load", "method": "init"
+      },
+      {
+        "hook": "filter:header.build", "method": "addNavigation"
+      },
+      {
+        "hook": "filter:admin.header.build", "method": "addAdminNavigation"
+      }
+    ],
+    "templates": "public/templates",
+    "scripts": [
+      "public/header-extend.js",
+      "public/jquery.ui.touch-punch.min.js"
+    ],
+    "css": [
+      "public/header-extend.css"
+    ]
+}
