@@ -17,7 +17,7 @@
     "extend"
   ],
   "author": "PitaJ",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pitaj/nodebb-plugin-header-extend/issues"
   },

@@ -13,5 +13,10 @@ Don't forget to restart after installing and activating the plugin. After instal
 
 Everything you need to know is on that page.
 
+Features
+-----------
+* Simple, drag-and-drop interface
+* Mobile compatible sub-menus
+
 ## Suggestions? Encountered a Bug?
 Please submit all feature requests and bugs with the [Issue tracker at Github.](https://github.com/pitaj/nodebb-plugin-header-extend/issues) Thanks
