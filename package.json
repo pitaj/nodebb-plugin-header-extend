@@ -23,5 +23,8 @@
   },
   "homepage": "https://github.com/pitaj/nodebb-plugin-header-extend",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "nbbpm": {
+    "compatibility": ">=0.5.0"
+  }
 }
