@@ -9,19 +9,22 @@ $(document).ready(function(){
 
   if (noTouch) {
     document.documentElement.className += " no-touch";
-    setTimeout(function(){
-      as.off();
-    }, 100);
   } else {
-    setTimeout(function(){
-      as.off().click(function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        $(this).parent().toggleClass("expand");
-        //console.log("event fired");
-        return false;
-      });
-    }, 100);
+    as.click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $(this).parent().toggleClass("expand");
+      //console.log("event fired");
+      return false;
+    });
   }
+
+  $(".header-extend-menu").each(function(){
+    var self = $(this);
+    self.children().css({position: "static", display: "block", visibility: "hidden"});
+    setTimeout(function(){
+      self.width(self.width()).children().css({position: "", display: "", visibility: ""});
+    }, 500);
+  });
 
 });

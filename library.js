@@ -140,6 +140,9 @@
           "text": text
         });
       }
+
+      //console.log(JSON.stringify(header.navigation));
+
       callback(null, header);
     });
   };
