@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-header-extend",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This plugin adds the ability to create custom header icons and menus",
   "main": "library.js",
   "scripts": {

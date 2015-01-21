@@ -18,13 +18,6 @@ $(document).ready(function(){
       return false;
     });
   }
-
-  $(".header-extend-menu").each(function(){
-    var self = $(this);
-    self.children().css({position: "static", display: "block", visibility: "hidden"});
-    setTimeout(function(){
-      self.width(self.width()).children().css({position: "", display: "", visibility: ""});
-    }, 500);
-  });
+  
 
 });
