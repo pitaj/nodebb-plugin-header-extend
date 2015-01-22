@@ -134,7 +134,7 @@
 
         header.navigation.push({
           "class": "header-extend-"+(data[i].subItems && data[i].subItems.length ? "menu" : "item"), // type === "item" || "menu"
-          "route": data[i].subItems && data[i].subItems.length ? "#" : data[i].route,
+          "route": data[i].subItems && data[i].subItems.length ? "javascript:void(0)" : data[i].route,
           "name": data[i].name,
           "title": data[i].name,
           "text": text

@@ -1,23 +1,20 @@
 "use strict";
 
-//console.log("loaded");
-
 $(document).ready(function(){
 
-  var noTouch = !("ontouchstart" in document.documentElement),
-  as = $(".header-extend-menu > a:first-child");
+  var as = $(".header-extend-menu > a:first-child");
 
-  if (noTouch) {
-    document.documentElement.className += " no-touch";
-  } else {
-    as.click(function (e) {
-      e.stopPropagation();
-      e.preventDefault();
+  function reset(){
+    as.off().click(function () {
       $(this).parent().toggleClass("expand");
-      //console.log("event fired");
-      return false;
     });
   }
-  
+
+  reset();
+  setTimeout(reset, 200);
+  setTimeout(reset, 400);
+  setTimeout(reset, 600);
+  setTimeout(reset, 800);
+  setTimeout(reset, 1000);
 
 });
