@@ -45,3 +45,7 @@
 .header-extend-config .panel-heading {
   line-height: 39px;
 }
+
+.header-extend-config .item-newtab {
+  display:none;
+}

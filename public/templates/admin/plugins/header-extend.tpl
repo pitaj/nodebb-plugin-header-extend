@@ -523,6 +523,11 @@
               <input type="checkbox" id="item-iconOnly"> Show only the icon in desktop menu
             </label>
           </div>
+          <div class="form-group checkbox">
+            <label>
+              <input type="checkbox" id="item-newtab"> Open link in a new tab
+            </label>
+          </div>
         </form>
       </div>
       <div class="modal-footer">

@@ -91,6 +91,7 @@
     name: the title of the menu or menu item,
     route: the url of the page the link points to (relative or absolute),
     iconOnly: boolean whether or not to show only the icon in the desktop menu,
+    newtab: link opens in a new tab / window,
     subItems: the items in this menu
   }
   */
@@ -120,15 +121,16 @@
 
       for(i=0; i<data.length; i++){
         text = "";
-        text += (data[i].icon ? '<i class="fa fa-fw '+data[i].icon+'"></i>' : '') + '<span '+
+        text += (data[i].icon ? '<i class="fa fa-fw '+data[i].icon+'"></i>' : '') + '<span '+(data[i].newtab ? 'target="_blank"' : '')+
         (data[i].iconOnly ? 'class="visible-xs-inline"' : "")+'> '+data[i].name+'</span>';
 
 
         if(data[i].subItems && data[i].subItems.length){
           for(a=0; a<data[i].subItems.length; a++){
             it = data[i].subItems[a];
-            text += '<a href="'+it.route+'" class="header-extend-menu-item">'+
-            (it.icon ? '<i class="fa fa-fw '+it.icon+'"></i>' : '') + '<span '+(it.iconOnly ? 'class="visible-xs-inline"' : "")+'> '+it.name+'</span></a>';
+            text += '<a href="'+it.route+'" class="header-extend-menu-item" '+
+            (it.newtab ? 'target="_blank"' : '')+'>'+(it.icon ? '<i class="fa fa-fw '+it.icon+'"></i>' : '') +
+            '<span '+(it.iconOnly ? 'class="visible-xs-inline"' : "")+'> '+it.name+'</span></a>';
           }
         }
 

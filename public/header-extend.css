@@ -2,9 +2,11 @@
   display: block;
 }
 
+/*
 .nav .header-extend-menu > .tooltip {
   display:none!important;
 }
+*/
 
 .nav .header-extend-menu.expand > a:first-child {
   background-color: rgb(119, 119, 119);
@@ -16,7 +18,7 @@
   background-color: #777;
   color: #fff;
   left: 0;
-  z-index: 1;
+  z-index: 1031;
   height: 0;
   overflow: hidden;
   padding: 0 15px;
@@ -38,7 +40,6 @@
   content: '  \f078';
   font: normal normal normal 10px/1 FontAwesome;
   display: inline-block;
-  margin-right: -10px;
   margin-left: 10px;
 }
 

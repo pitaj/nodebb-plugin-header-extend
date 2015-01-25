@@ -20,6 +20,7 @@
           '<i class="fa fa-edit"></i>'+
         '</button>'+                                  // if false, "hidden." if true, ""
         '<button type="button" class="btn btn-default iconOnly {iconOnly}" disabled>Icon only</button>'+
+        '<span class="item-newtab" >{newtab}</span>'+
       '</div>'+
       '<div class="panel-body"></div>'+
     '</div>';
@@ -31,6 +32,7 @@
       .replace("{icon}", arr[i].icon)
       .replace("{name}", arr[i].name)
       .replace("{route}", arr[i].route)
+      .replace("{newtab}", arr[i].newtab)
       .replace("{iconOnly}", arr[i].iconOnly ? "" : "hidden");
 
       item = $(item).appendTo(parent);
@@ -81,7 +83,8 @@
         name: "New Menu Link",
         icon: "fa-doesnt-exist",
         iconOnly: false,
-        route: "/your/page/here"
+        route: "/your/page/here",
+        newtab: false
       };
 
       tis.find(".btn-primary").off().click(function(){
@@ -90,6 +93,7 @@
           route: $("#item-route").val(),
           iconOnly: $("#item-iconOnly").prop("checked"),
           icon: $("#item-icon").attr("class"),
+          newtab: $("#item-newtab").prop("checked")
         };
 
         initItems([data], $(".header-extend-config"));
@@ -103,7 +107,8 @@
         name: item.find(".panel-title").html(),
         icon: item.find(".item-icon").attr("class"), // .replace("item-icon", "").replace("fa", "").trim()
         iconOnly: !item.find(".iconOnly").hasClass("hidden"),
-        route: item.find(".item-route").html()
+        route: item.find(".item-route").html(),
+        newtab: Boolean(item.find(".item-newtab").html())
       };
 
       tis.find(".btn-primary").off().click(function(){
@@ -112,11 +117,13 @@
           route: $("#item-route").val(),
           iconOnly: $("#item-iconOnly").prop("checked"),
           icon: $("#item-icon").attr("class"),
+          newtab: $("#item-newtab").prop("checked")
         };
 
         item.find(".item-icon").first().attr("class", data.icon);
         item.find(".panel-title").first().html(data.name);
         item.find(".item-route").first().html(data.route);
+        item.find(".item-newtab").first().html(data.newtab);
         if(data.iconOnly){
           item.find(".iconOnly").first().removeClass("hidden");
         } else {
@@ -126,10 +133,12 @@
     } else {
       return;
     }
+
     $("#item-name").val(data.name);
     $("#item-route").val(data.route);
     $("#item-iconOnly").prop("checked", data.iconOnly);
     $("#item-icon").attr("class", data.icon);
+    $("#item-newtab").prop("checked", data.newtab);
 
   });
 
@@ -142,7 +151,8 @@
           name: item.find(".panel-title").html(),
           icon: item.find(".item-icon").attr("class").replace("item-icon", "").replace("fa", "").trim(),
           iconOnly: !item.find(".iconOnly").hasClass("hidden"),
-          route: item.find(".item-route").html()
+          route: item.find(".item-route").html(),
+          newtab: item.find(".item-newtab").html()
         };
         var x = $(this).find(".panel-body").children();
         if(x.length){
@@ -157,7 +167,7 @@
     var data = [];
     subData($(".header-extend-config").children(), data);
 
-    console.log("the data", data, JSON.stringify(data));
+    //console.log("the data", data, JSON.stringify(data));
 
     // then, send data
     $.post("/api/admin/plugins/header-extend/save", { data : JSON.stringify(data) }, function(data){
