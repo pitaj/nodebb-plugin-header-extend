@@ -26,9 +26,9 @@
 }
 
 .nav .header-extend-menu.expand > a:nth-of-type(n + 2){
-  height: 50px;
+  height: 40px;
   line-height: 20px;
-  padding: 15px 15px;
+  padding: 10px 15px;
 }
 
 .nav .header-extend-menu > a:last-child {
@@ -48,7 +48,7 @@
   display: none;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
   .nav .header-extend-menu {
     max-height: 50px;
   }
