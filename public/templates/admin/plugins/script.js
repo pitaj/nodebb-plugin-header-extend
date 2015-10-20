@@ -180,7 +180,18 @@
 
   }
 
+  function reset(){
+    $.post("/api/admin/plugins/header-extend/reset", {}, function(data){
+      if(data === 'Successfully saved reset to default configuration'){
+        app.alertSuccess(data);
+      } else {
+        app.alertError(data);
+      }
+    });
+  }
+
   $("#save").click(save);
+  $('#reset').click(reset);
 
   $.getJSON("/api/admin/plugins/header-extend", function(data){
 

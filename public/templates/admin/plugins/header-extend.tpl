@@ -575,8 +575,9 @@
 </p>
 
 <div>
-  <button type="button" data-target="#edit-item" data-toggle="modal" class="add btn btn-success"><i class="fa fa-plus-square-o"></i></button>
-  <button type="button" class="btn btn-primary" id="save"><i class="fa fa-floppy-o"></i></button>
+  <button type="button" data-target="#edit-item" data-toggle="modal" class="add btn btn-success" title = "add"><i class="fa fa-plus-square-o"></i></button>
+  <button type="button" class="btn btn-primary" id="save"><i class="fa fa-floppy-o" title = "save"></i></button>
+  <button type="button" class="btn btn-primary" id="reset"><i class="fa fa-repeat" title = "reset to default"></i></button>
 </div>
 
 <div class="header-extend-config">

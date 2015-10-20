@@ -3,7 +3,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.add, #save {
+.add, #save, #reset {
   font-size: 30px;
   margin-right: 10px;
 }

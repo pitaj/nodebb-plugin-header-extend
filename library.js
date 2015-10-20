@@ -43,7 +43,6 @@
 
   function save(req, res, next){
     var data = JSON.parse(req.body.data); //JSON.parse(req.body);
-
     //console.log("the data", data);
 
     setDataField("menuItems", data, function(err){
@@ -54,7 +53,43 @@
       res.json('Successfully saved configuration');
     });
   }
-
+  function resetToDefault(req, res, next){
+    var defaultMenuItems = [
+      {
+        "name":"Recent",
+        "icon":"item-icon fa fa-clock-o",
+        "iconOnly":true,
+        "route":"/recent",
+        "newtab":false
+      },
+      {
+        "name":"Tags",
+        "icon":"item-icon fa fa-tags",
+        "iconOnly":true,
+        "route":"/tags",
+        "newtab":false
+      },
+      {
+        "name":"Popular",
+        "icon":"item-icon fa fa-fire",
+        "iconOnly":true,
+        "route":"/popular",
+        "newtab":false
+      },
+      {
+        "name":"Users",
+        "icon":"item-icon fa fa-users",
+        "iconOnly":true,
+        "route":"/users",
+        "newtab":false
+      }];
+    setDataField("menuItems", defaultMenuItems, function(err){
+      if(err){
+        return res.json('Saving failed. Try again later.');
+      }
+      res.json('Successfully saved configuration');
+    });
+  }
   exports.init = function (app, middleware, controllers, callback) {
 
     var router;
@@ -72,7 +107,7 @@
     router.get('/api/admin/plugins/header-extend', renderAdmin);
 
     router.post('/api/admin/plugins/header-extend/save', save);
-
+    router.post('/api/admin/plugins/header-extend/reset', resetToDefault);
     callback();
   };
 
@@ -129,7 +164,7 @@
           for(a=0; a<data[i].subItems.length; a++){
             it = data[i].subItems[a];
             text += '<a href="'+it.route+'" class="header-extend-menu-item" '+
-            (it.newtab ? 'target="_blank"' : '')+'>'+(it.icon ? '<i class="fa fa-fw '+it.icon+'"></i>' : '') +
+            (it.newtab ? 'target="_blank"' : it.clearCache ? 'target="_top"' : '')+'>'+(it.icon ? '<i class="fa fa-fw '+it.icon+'"></i>' : '') +
             '<span '+(it.iconOnly ? 'class="visible-xs-inline"' : "")+'> '+it.name+'</span></a>';
           }
         }
